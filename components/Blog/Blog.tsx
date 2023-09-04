@@ -6,7 +6,7 @@ import { ChevronDoubleRightIcon } from '@heroicons/react/20/solid'
 
 const Blog = ({ blog }: { blog: BlogType }) => {
   return (
-    <div className="relative group hover:scale-105 duration-300 ease-in">
+    <div className="relative group hover:scale-105 duration-500 ease-in-out">
       <Image
         className="rounded-lg object-cover aspect-auto w-full"
         src={blog.image}
