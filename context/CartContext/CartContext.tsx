@@ -16,7 +16,7 @@
 
 'use client'
 
-import { Cart } from '@/interfaces'
+import { type Cart } from '@/interfaces'
 import { createContext, createServerContext } from 'react'
 
 interface CartContextProps {

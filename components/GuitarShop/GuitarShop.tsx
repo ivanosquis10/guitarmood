@@ -3,20 +3,22 @@ import { useState } from 'react'
 import { useCartStore } from '@/store'
 
 import { formatMoney } from '@/helpers'
-import { GuitarType } from '@/interfaces'
+import { type GuitarType } from '@/interfaces'
 import { StarIcon, ShoppingCartIcon } from '@heroicons/react/20/solid'
 
 interface Props {
   guitar: GuitarType
 }
 const GuitarShop = ({ guitar }: Props) => {
-
   const [quantity, setQuantity] = useState('')
   const { addToCart } = useCartStore()
   const reviews = { average: 4, totalCount: 117 }
 
   const handleAddToCart = (guitar: GuitarType, quantity: string) => {
-    if (!quantity) return alert('Put a quantity')
+    if (quantity === '') {
+      alert('Put a quantity')
+      return
+    }
 
     const quantityNumber = Number(quantity)
     addToCart({
@@ -99,7 +101,7 @@ const GuitarShop = ({ guitar }: Props) => {
                 id="quantity"
                 className="w-full rounded-lg text-center border-2 border-zinc-700 bg-zinc-800 hover:bg-neutral-900 py-3"
                 value={quantity}
-                onChange={(e) => setQuantity(e.target.value)}
+                onChange={(e) => { setQuantity(e.target.value) }}
               >
                 <option selected disabled value="" >Quantity</option>
                 <option value="1">1</option>
@@ -113,7 +115,7 @@ const GuitarShop = ({ guitar }: Props) => {
             <button
               type="button"
               className="w-full text-white border-2 border-zinc-700 bg-zinc-800 hover:bg-neutral-900 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center gap-x-2 justify-center duration-300 ease-in capitalize"
-              onClick={() => handleAddToCart(guitar, quantity)}
+              onClick={() => { handleAddToCart(guitar, quantity) }}
             >
               <ShoppingCartIcon width={25} height={25} />
               add to cart

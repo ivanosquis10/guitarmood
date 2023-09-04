@@ -10,7 +10,7 @@ export interface GuitarType {
 
 export interface GuitarShop extends GuitarType {
   quantity: number
-} 
+}
 
 export interface BlogType {
   id: number

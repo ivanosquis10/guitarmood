@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { formatMoney } from '@/helpers'
-import { GuitarType } from '@/interfaces'
+import { type GuitarType } from '@/interfaces'
 
 const Guitar = ({ guitar }: { guitar: GuitarType }) => {
   const { nombre, image, precio } = guitar

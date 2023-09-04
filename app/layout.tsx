@@ -2,18 +2,18 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
 import { Footer, Navbar } from '@/components'
+import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
-import './globals.css'
 // import { CartProvider } from '@/context'
 
 export const metadata: Metadata = {
   title: 'GuitarMood',
-  description: 'The best place to buy a guitar',
+  description: 'The best place to buy a guitar'
 }
 
-export default function RootLayout({
-  children,
+export default function RootLayout ({
+  children
 }: {
   children: React.ReactNode
 }) {

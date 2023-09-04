@@ -1,7 +1,7 @@
 'use client'
 
 import { create } from 'zustand'
-import { GuitarShop } from '../interfaces'
+import { type GuitarShop } from '../interfaces'
 
 interface StoreCar {
   cart: GuitarShop[]
@@ -17,7 +17,6 @@ export const useCartStore = create<StoreCar>((set, get) => ({
   cart: [],
   addToCart: (item: GuitarShop) => {
     set((state) => {
-
       // validamos si esta en el carrito
       const isAlreadyInCart = state.cart.find((guitar) => guitar.id === item.id)
       if (isAlreadyInCart) {
@@ -70,10 +69,5 @@ export const useCartStore = create<StoreCar>((set, get) => ({
   calculateTotal: () => {
     return get().cart.reduce((acc, guitar) => acc + guitar.quantity * guitar.precio, 0)
   }
-
-
-
-
-
 
 }))

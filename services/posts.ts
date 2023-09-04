@@ -15,7 +15,7 @@ export const getPosts = async () => {
 }
 
 export const getPost = async (postName: string): Promise<BlogType | null> => {
-  const {data } = await supabase.from('posts').select('*').eq('url', postName)
+  const { data } = await supabase.from('posts').select('*').eq('url', postName)
   const postData = data?.[0]
   return postData as BlogType
 }

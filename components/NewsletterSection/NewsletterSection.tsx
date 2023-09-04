@@ -1,6 +1,5 @@
 import { EnvelopeIcon } from '@heroicons/react/20/solid'
 
-
 const NewsletterSection = () => {
   return (
     <section className="">

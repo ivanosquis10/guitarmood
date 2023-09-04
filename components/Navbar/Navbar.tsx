@@ -19,7 +19,7 @@ const linksNav: LinksNavs[] = [
   {
     id: 1,
     path: '/',
-    title: 'home',
+    title: 'home'
   },
   // {
   //   id: 2,
@@ -29,13 +29,13 @@ const linksNav: LinksNavs[] = [
   {
     id: 3,
     path: 'blog',
-    title: 'blog',
+    title: 'blog'
   },
   {
     id: 4,
     path: 'shop',
-    title: 'shop',
-  },
+    title: 'shop'
+  }
   // {
   //   id: 5,
   //   path: 'cart',
@@ -49,8 +49,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const { cart } = useCartStore()
 
-  const handleMenu = () => setMenuOpen(!menuOpen)
-
+  const handleMenu = () => { setMenuOpen(!menuOpen) }
 
   return (
     <header className='w-full relative'>
@@ -75,14 +74,13 @@ const Navbar = () => {
             </svg>
           </button>
 
-
           <div className={`${menuOpen ? 'block h-screen' : 'hidden'} w-full md:block md:w-auto md:h-full`} id="navbar-default">
             <ul className="flex flex-col p-4 md:p-0 mt-4 rounded-lg  md:flex-row md:space-x-8 md:mt-0">
               {
                 linksNav.map(({ id, path, icon, title }) => (
                   <li key={id}>
                     <Link href={`/${path}`} className="relative text-xl md:text-base block py-5 underline md:no-underline md:py-2 pl-3 pr-4 text-white md:p-0 capitalize duration-300 ease-in transition-all hover:text-slate-200 font-bold" aria-current="page" passHref >
-                      {icon ? icon : title}
+                      {icon || title}
                     </Link>
                   </li>
                 ))

@@ -8,23 +8,22 @@ import CourseSection from './CourseSection/CourseSection'
 import BlogSection from './BlogSection/BlogSection'
 import NewsletterSection from './NewsletterSection/NewsletterSection'
 
-
 import Guitar from './Guitar/Guitar'
 import Blog from './Blog/Blog'
 import GuitarShop from './GuitarShop/GuitarShop'
 import Cart from './Cart/Cart'
 
-export { 
-  Navbar, 
-  Hero, 
-  Heading, 
-  GuitarsSection, 
+export {
+  Navbar,
+  Hero,
+  Heading,
+  GuitarsSection,
   GuitarShop,
-  Guitar, 
-  BlogSection, 
+  Guitar,
+  BlogSection,
   Blog,
-  CourseSection, 
-  NewsletterSection, 
+  CourseSection,
+  NewsletterSection,
   Cart,
-  Footer 
+  Footer
 }

@@ -1,7 +1,7 @@
 import { getPost } from '@/services'
 import { formatDate } from '@/helpers'
 
-export default async function Page({ params }: { params: { slug: string } }) {
+export default async function Page ({ params }: { params: { slug: string } }) {
   const postFetch = getPost(params.slug)
   const post = await postFetch
   return (

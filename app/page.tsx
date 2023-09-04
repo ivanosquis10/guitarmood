@@ -1,6 +1,6 @@
 import { Hero, GuitarsSection, CourseSection, BlogSection, NewsletterSection } from '@/components'
 
-export default function Home() {
+export default function Home () {
   return (
     <main className='relative'>
       <Hero />

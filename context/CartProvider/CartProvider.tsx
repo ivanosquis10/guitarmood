@@ -37,9 +37,9 @@
 
 'use client'
 
-import { FC, ReactNode, useState } from 'react'
+import { type FC, type ReactNode, useState } from 'react'
 import { CartContext } from '../CartContext/CartContext'
-import { Cart } from '@/interfaces'
+import { type Cart } from '@/interfaces'
 
 interface Props {
   children: ReactNode
@@ -54,7 +54,7 @@ export const CartProvider: FC<Props> = ({ children }) => {
   return (
     <CartContext.Provider value={{
       // properties
-      cart,
+      cart
     }}
     >{children}
     </CartContext.Provider>

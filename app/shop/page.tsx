@@ -1,7 +1,7 @@
 import { Guitar, Heading } from '@/components'
 import { getGuitars } from '@/services'
 
-export default async function Page() {
+export default async function Page () {
   const guitarFetch = getGuitars()
   const guitarras = await guitarFetch
   return (

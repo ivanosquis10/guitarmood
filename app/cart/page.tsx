@@ -1,6 +1,6 @@
 import { Cart, Heading } from '@/components'
 
-export default function Page() {
+export default function Page () {
   return (
     <section className='pt-8 pb-16 md:pt-20 max-w-screen-xl mx-auto'>
       <Heading

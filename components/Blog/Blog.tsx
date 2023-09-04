@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { BlogType } from '@/interfaces'
+import type { BlogType } from '@/interfaces'
 import { ChevronDoubleRightIcon } from '@heroicons/react/20/solid'
 
 const Blog = ({ blog }: { blog: BlogType }) => {
