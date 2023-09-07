@@ -1,11 +1,14 @@
 import { getGuitar } from '@/services'
 import { GuitarShop } from '@/components'
 
-export default async function Page ({ params }: { params: { name: string } }) {
+export default async function Page({ params }: { params: { name: string } }) {
   const guitarFetch = getGuitar(params.name)
   const guitar = await guitarFetch
-
   return (
-    <GuitarShop guitar={guitar} />
+    <>
+      {
+        guitar != null && <GuitarShop guitar={guitar} />
+      }
+    </>
   )
 }

@@ -1,11 +1,12 @@
 'use client'
 
 import { create } from 'zustand'
+import toast from 'react-hot-toast'
 import { type GuitarShop } from '../interfaces'
 
-interface StoreCar {
+interface Store {
   cart: GuitarShop[]
-  // total: number
+  reviews: { average: number, totalCount: number }
   addToCart: (item: GuitarShop) => void
   deleteItem: (id: number) => void
   addQuantity: (id: number) => void
@@ -13,18 +14,19 @@ interface StoreCar {
   calculateTotal: () => number
 }
 
-export const useCartStore = create<StoreCar>((set, get) => ({
+export const useCartStore = create<Store>((set, get) => ({
   cart: [],
+  reviews: { average: 4, totalCount: 117 },
   addToCart: (item: GuitarShop) => {
     set((state) => {
       // validamos si esta en el carrito
       const isAlreadyInCart = state.cart.find((guitar) => guitar.id === item.id)
-      if (isAlreadyInCart) {
+      if (isAlreadyInCart != null) {
         // en caso de que este, iteramos para conseguirlo
         const cartUpdate = state.cart.map((guitar) => {
           // comparamos el id
           if (guitar.id === item.id) {
-            // y actualizamos la cantidad
+            // y actualizamos la cantidadme dice
             return { ...guitar, quantity: guitar.quantity + item.quantity }
           }
           return guitar
@@ -34,12 +36,22 @@ export const useCartStore = create<StoreCar>((set, get) => ({
       }
 
       // get().calculateTotal()
+      toast.success('Guitar added successfully', {
+        duration: 2000,
+        position: 'top-right'
+      })
       return { ...state, cart: [...state.cart, item] }
     })
   },
   deleteItem: (id: number) => {
     set((state) => {
       const cartUpdate = state.cart.filter((guitar) => guitar.id !== id)
+
+      toast.error('Guitar eliminated successfully', {
+        duration: 2000,
+        position: 'top-right'
+      })
+
       return { ...state, cart: cartUpdate }
     })
   },
@@ -47,7 +59,7 @@ export const useCartStore = create<StoreCar>((set, get) => ({
   addQuantity: (id: number) => {
     set((state) => {
       const cartUpdate = state.cart.map((guitar) => {
-        if (guitar.id === id) {
+        if (guitar.id === id && guitar.quantity <= 10) {
           return { ...guitar, quantity: guitar.quantity + 1 }
         }
         return guitar
@@ -69,5 +81,4 @@ export const useCartStore = create<StoreCar>((set, get) => ({
   calculateTotal: () => {
     return get().cart.reduce((acc, guitar) => acc + guitar.quantity * guitar.precio, 0)
   }
-
 }))

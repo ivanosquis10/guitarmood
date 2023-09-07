@@ -5,14 +5,13 @@ import { Footer, Navbar } from '@/components'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
-// import { CartProvider } from '@/context'
 
 export const metadata: Metadata = {
   title: 'GuitarMood',
   description: 'The best place to buy a guitar'
 }
 
-export default function RootLayout ({
+export default function RootLayout({
   children
 }: {
   children: React.ReactNode
@@ -20,11 +19,9 @@ export default function RootLayout ({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-zinc-900 text-white overflow-x-hidden relative scroll-smooth`}>
-        {/* <CartProvider> */}
         <Navbar />
         {children}
         <Footer />
-        {/* </CartProvider> */}
       </body>
     </html>
   )

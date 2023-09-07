@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import { toast } from 'react-hot-toast'
 import { useCartStore } from '@/store'
 
 import { formatMoney } from '@/helpers'
@@ -9,14 +10,18 @@ import { StarIcon, ShoppingCartIcon } from '@heroicons/react/20/solid'
 interface Props {
   guitar: GuitarType
 }
+
 const GuitarShop = ({ guitar }: Props) => {
   const [quantity, setQuantity] = useState('')
-  const { addToCart } = useCartStore()
-  const reviews = { average: 4, totalCount: 117 }
+  const { addToCart, reviews } = useCartStore()
 
   const handleAddToCart = (guitar: GuitarType, quantity: string) => {
     if (quantity === '') {
-      alert('Put a quantity')
+      toast.error('Put a quantity!', {
+        position: 'top-right',
+        duration: 2000,
+        id: 'quantity'
+      })
       return
     }
 
@@ -32,10 +37,10 @@ const GuitarShop = ({ guitar }: Props) => {
       <div className="pt-20 grid md:grid-cols-2 h-full items-center container mx-auto gap-x-8 px-4">
 
         <div className="flex justify-center w-full sm:px-6 lg:px-4 bg-white rounded-md">
-          <div className="">
+          <div>
             <img
               src={guitar?.image}
-              alt={guitar?.descripcion}
+              alt={`guitar ${guitar?.nombre}`}
               width={220}
               height={220}
               className='object-contain object-center'
@@ -43,7 +48,7 @@ const GuitarShop = ({ guitar }: Props) => {
           </div>
         </div>
 
-        <div className='w-full p-2 h-full border flex flex-col justify-center'>
+        <div className='w-full p-2 h-full flex flex-col justify-center'>
 
           <div>
             <small className='text-base text-zinc-500'>New</small>
@@ -93,6 +98,13 @@ const GuitarShop = ({ guitar }: Props) => {
             </span>
           </div>
 
+          <div className='flex flex-col [&>span]:text-zinc-400 [&>span]:text-sm border-b border-zinc-700 py-6'>
+            <small className='text-base text-zinc-500 capitalize'>description</small>
+            <p className="text-sm tracking-wide font-semibold text-white">
+              {guitar?.descripcion}
+            </p>
+          </div>
+
           <div className='py-10 w-full flex flex-col space-y-3 md:flex-row items-center md:gap-x-2 md:space-y-0'>
             <form
               className='w-full text-white font-medium rounded-lg duration-300 ease-in capitalize'
@@ -103,7 +115,7 @@ const GuitarShop = ({ guitar }: Props) => {
                 value={quantity}
                 onChange={(e) => { setQuantity(e.target.value) }}
               >
-                <option selected disabled value="" >Quantity</option>
+                <option disabled value="">Quantity</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

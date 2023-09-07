@@ -39,13 +39,13 @@
 
 import { type FC, type ReactNode, useState } from 'react'
 import { CartContext } from '../CartContext/CartContext'
-import { type Cart } from '@/interfaces'
+// import { type Cart } from '@/interfaces'
 
 interface Props {
   children: ReactNode
 }
 export const CartProvider: FC<Props> = ({ children }) => {
-  const [cart, setCart] = useState<Cart[]>([
+  const [cart, setCart] = useState([
     {
       id: 1,
       title: 'hola'

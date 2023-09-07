@@ -14,7 +14,7 @@ const Guitar = ({ guitar }: { guitar: GuitarType }) => {
       >
 
         <Link
-          href={`/guitars/${nombre}`}
+          href={`/shop/guitars/${nombre}`}
           title={`go to guitar ${nombre}`}
         >
           <img
@@ -22,7 +22,7 @@ const Guitar = ({ guitar }: { guitar: GuitarType }) => {
             alt={nombre}
             width={150}
             height={300}
-            className="h-full w-full object-contain object-center lg:h-full lg:w-full"
+            className="h-full w-full object-contain object-center lg:h-full lg:w-full hover:scale-90 transition-transform ease-in-out"
 
           />
         </Link>
