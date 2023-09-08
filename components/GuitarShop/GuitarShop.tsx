@@ -126,11 +126,11 @@ const GuitarShop = ({ guitar }: Props) => {
 
             <button
               type="button"
-              className="w-full text-white border-2 border-zinc-700 bg-zinc-800 hover:bg-neutral-900 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center gap-x-2 justify-center duration-300 ease-in capitalize"
+              className="w-full text-white flex items-center justify-center button_primary gap-2"
               onClick={() => { handleAddToCart(guitar, quantity) }}
             >
+              Add to cart
               <ShoppingCartIcon width={25} height={25} />
-              add to cart
             </button>
           </div>
 

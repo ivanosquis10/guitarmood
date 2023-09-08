@@ -23,7 +23,7 @@ const CartTotal = () => {
       <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
 
       <button
-        className="mt-6 w-full capitalize flex items-center justify-center rounded-md border border-zinc-700 bg-zinc-800 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-zinc-900 duration-300 ease-in-out"
+        className="mt-6 w-full capitalize flex items-center justify-center button_primary"
       >
         buy
       </button>
