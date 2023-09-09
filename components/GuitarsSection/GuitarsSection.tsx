@@ -5,7 +5,7 @@ import { ChevronDoubleRightIcon } from '@heroicons/react/20/solid'
 const GuitarsSection = async () => {
   const guitarras = await getGuitars(8)
   return (
-    <section className='relative max-w-screen-xl mx-auto py-8 md:py-16'>
+    <section className='relative max-w-screen-xl mx-auto px-4 md:px-0 py-8 md:py-16'>
       <Heading
         title='Our collection'
         subtitle='Here are our best-selling and most quoted guitars'

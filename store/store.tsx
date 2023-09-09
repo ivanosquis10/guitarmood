@@ -37,7 +37,7 @@ export const useCartStore = create<Store>((set, get) => ({
 
       // get().calculateTotal()
       toast.success('Guitar added successfully', {
-        duration: 2000,
+        duration: 1000,
         position: 'top-right'
       })
       return { ...state, cart: [...state.cart, item] }
@@ -48,7 +48,7 @@ export const useCartStore = create<Store>((set, get) => ({
       const cartUpdate = state.cart.filter((guitar) => guitar.id !== id)
 
       toast.error('Guitar eliminated successfully', {
-        duration: 2000,
+        duration: 1000,
         position: 'top-right'
       })
 

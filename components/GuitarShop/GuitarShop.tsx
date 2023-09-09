@@ -48,7 +48,7 @@ const GuitarShop = ({ guitar }: Props) => {
           </div>
         </div>
 
-        <div className='w-full p-2 h-full flex flex-col justify-center'>
+        <div className='w-full p-1 h-full flex flex-col justify-center'>
 
           <div>
             <small className='text-base text-zinc-500'>New</small>
@@ -72,11 +72,11 @@ const GuitarShop = ({ guitar }: Props) => {
                   ))}
                 </div>
                 <p className="sr-only">{reviews.average} out of 5 stars</p>
-                <span className="text-xs p-1 rounded bg-neutral-800 font-bold">
+                <span className="text-xs p-1 rounded bg-neutral-800 font-bold truncate">
                   {reviews.totalCount} reviews
                 </span>
                 |
-                <span className="text-xs p-1 rounded bg-neutral-800 font-bold">
+                <span className="text-xs p-1 rounded bg-neutral-800 font-bold truncate">
                   +{reviews.totalCount} answered questions
                 </span>
               </div>
@@ -111,7 +111,7 @@ const GuitarShop = ({ guitar }: Props) => {
             >
               <select
                 id="quantity"
-                className="w-full rounded-lg text-center border-2 border-zinc-700 bg-zinc-800 hover:bg-neutral-900 py-3"
+                className="w-full text-center button_primary"
                 value={quantity}
                 onChange={(e) => { setQuantity(e.target.value) }}
               >
@@ -130,7 +130,7 @@ const GuitarShop = ({ guitar }: Props) => {
               onClick={() => { handleAddToCart(guitar, quantity) }}
             >
               Add to cart
-              <ShoppingCartIcon width={25} height={25} />
+              <ShoppingCartIcon className="w-5 h-5" />
             </button>
           </div>
 

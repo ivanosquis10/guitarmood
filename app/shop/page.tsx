@@ -5,7 +5,7 @@ export default async function Page() {
   const guitarFetch = getGuitars()
   const guitarras = await guitarFetch
   return (
-    <section className='pt-8 pb-16 md:pt-24 max-w-screen-xl mx-auto'>
+    <section className='pt-10 pb-16 md:pt-24 max-w-screen-xl mx-auto'>
       <Heading
         title='our guitars collection'
         subtitle='see our best-selling and most quoted guitars'

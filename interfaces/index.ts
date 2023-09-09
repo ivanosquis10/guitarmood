@@ -20,3 +20,11 @@ export interface BlogType {
   image: string
   url: string
 }
+
+export type LinksNavs = {
+  id: number
+  path: string
+  title: string
+  icon?: JSX.Element
+  count?: string
+}
