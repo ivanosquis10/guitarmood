@@ -34,7 +34,7 @@ const GuitarShop = ({ guitar }: Props) => {
 
   return (
     <section className="w-full md:h-screen relative">
-      <div className="pt-20 grid md:grid-cols-2 h-full items-center container mx-auto gap-x-8 px-4">
+      <div className="pt-20 grid md:grid-cols-2 h-full items-center container mx-auto gap-x-8 px-2">
 
         <div className="flex justify-center w-full sm:px-6 lg:px-4 bg-white rounded-md">
           <div>
@@ -72,7 +72,7 @@ const GuitarShop = ({ guitar }: Props) => {
                   ))}
                 </div>
                 <p className="sr-only">{reviews.average} out of 5 stars</p>
-                <span className="text-xs p-1 rounded bg-neutral-800 font-bold truncate">
+                <span className="text-xs p-1 rounded bg-neutral-800 font-bold">
                   {reviews.totalCount} reviews
                 </span>
                 |
