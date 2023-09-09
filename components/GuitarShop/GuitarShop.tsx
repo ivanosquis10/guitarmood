@@ -65,7 +65,7 @@ const GuitarShop = ({ guitar }: Props) => {
                       key={rating}
                       className={`
                         ${reviews.average > rating ? 'text-yellow-400' : 'text-zinc-700'}
-                        'h-5 w-5 flex-shrink-0 `
+                        'w-4 h-4 md:h-5 md:w-5 flex-shrink-0 `
                       }
                       aria-hidden="true"
                     />

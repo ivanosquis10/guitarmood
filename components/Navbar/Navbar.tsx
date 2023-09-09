@@ -56,7 +56,7 @@ const Navbar = () => {
             {/* <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 17 14">
               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
             </svg> */}
-            <Bars3BottomRightIcon className='w-5 h-5' />
+            <Bars3BottomRightIcon className='w-6 h-6' />
           </button>
 
           <div className={`${menuOpen ? 'block h-screen' : 'hidden'} w-full md:block md:w-auto md:h-full`} id="navbar-default">
