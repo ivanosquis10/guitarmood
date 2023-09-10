@@ -22,8 +22,8 @@ const CartItem = ({ guitar }: { guitar: GuitarShop }) => {
 
       <div className="md:ml-4 flex flex-1 flex-col">
         <div>
-          <div className="flex justify-between text-base font-medium">
-            <h3 className='text-2xl font-bold text-white capitalize'>
+          <div className="flex justify-between items-center text-base font-medium">
+            <h3 className='text-xl md:text-2xl font-bold text-white capitalize'>
               {guitar.nombre}
             </h3>
             <p className="ml-4">{formatMoney(guitar.precio)}</p>
@@ -38,13 +38,13 @@ const CartItem = ({ guitar }: { guitar: GuitarShop }) => {
         <div className="flex flex-1 items-end justify-between text-sm">
           <div className='flex items-center gap-x-1'>
 
-            <p className="text-lg">Qty {guitar.quantity}</p>
+            <p className="text-base md:text-lg">Qty {guitar.quantity}</p>
             <button
               className={'border-2 border-zinc-700 duration-300 ease-in hover:bg-neutral-900'}
               onClick={() => { addQuantity(guitar.id) }}
               aria-label="Increase quantity"
             >
-              <PlusIcon width={20} height={20} />
+              <PlusIcon className="w-4 h-4 md:w-5 md:h-5" />
               <span className="sr-only">Increase quantity</span>
             </button>
 
@@ -52,7 +52,7 @@ const CartItem = ({ guitar }: { guitar: GuitarShop }) => {
               onClick={() => { minusQuantity(guitar.id) }}
               aria-label="Decrease quantity"
             >
-              <MinusIcon width={20} height={20} />
+              <MinusIcon className="w-4 h-4 md:w-5 md:h-5" />
               <span className="sr-only">Decrease quantity</span>
             </button>
           </div>
