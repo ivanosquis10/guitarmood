@@ -6,6 +6,7 @@ import { useCartStore } from '@/store'
 import { formatMoney } from '@/helpers'
 import { type GuitarType } from '@/interfaces'
 import { StarIcon, ShoppingCartIcon } from '@heroicons/react/20/solid'
+import Link from 'next/link'
 
 interface Props {
   guitar: GuitarType
@@ -34,7 +35,10 @@ const GuitarShop = ({ guitar }: Props) => {
 
   return (
     <section className="w-full md:h-screen relative">
-      <div className="pt-20 grid md:grid-cols-2 h-full items-center container mx-auto gap-x-8 px-2">
+      <div className="relative pt-20 grid md:grid-cols-2 h-full items-center container gap-y-2 md:gap-y-0 mx-auto gap-x-8 px-2">
+        <Link href={'/shop'} className='button-black-gradient md:col-span-2 w-fit' >
+          go back
+        </Link>
 
         <div className="flex justify-center w-full sm:px-6 lg:px-4 bg-white rounded-md">
           <div>

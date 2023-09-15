@@ -3,9 +3,9 @@ import { FacebookIcon, GithubIcon, InstagramIcon, TwitterIcon } from '../Icons/I
 const Footer = () => {
   return (
     <footer className="p-4 sm:p-6 bg-zinc-900">
-      <div className="mx-auto max-w-screen-xl">
-        <hr className="my-6 sm:mx-auto border-zinc-700 lg:my-5" />
-        <div className="sm:flex sm:items-center sm:justify-between">
+      <div className="mx-auto max-w-screen-xl border-t border-zinc-700">
+        {/* <hr className="my-4 sm:mx-auto border-zinc-700 lg:my-5" /> */}
+        <div className="sm:flex sm:items-center sm:justify-between mt-4">
           <span className="text-sm text-white sm:text-center">© 2022 <span className="hover:underline">GuitarMood</span>. All Rights Reserved.
           </span>
           <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">

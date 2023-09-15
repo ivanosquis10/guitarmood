@@ -1,3 +1,4 @@
+import { Footer } from '@/components'
 import { Toaster } from 'react-hot-toast'
 
 export default function ShopLayout({ children }: { children: React.ReactNode }) {
@@ -5,6 +6,7 @@ export default function ShopLayout({ children }: { children: React.ReactNode }) 
     <>
       <Toaster />
       {children}
+      <Footer />
     </>
   )
 }
