@@ -1,5 +1,5 @@
-import Navbar from './Navbar/Navbar'
 import Heading from './Heading/Heading'
+import Header from './Header/Header'
 import Footer from './Footer/Footer'
 import Hero from './Hero/Hero'
 
@@ -9,15 +9,15 @@ import GuitarShop from './GuitarShop/GuitarShop'
 
 import BlogSection from './BlogSection/BlogSection'
 import Blog from './Blog/Blog'
-
-import CourseSection from './CourseSection/CourseSection'
-import NewsletterSection from './NewsletterSection/NewsletterSection'
 import Cart from './Cart/Cart'
 import CartItem from './CartItem/CartItem'
 import CartTotal from './CartTotal/CartTotal'
 
+import CourseSection from './CourseSection/CourseSection'
+import NewsletterSection from './NewsletterSection/NewsletterSection'
+
 export {
-  Navbar,
+  Header,
   Hero,
   Heading,
   GuitarsSection,
