@@ -11,6 +11,7 @@ const Hero = () => {
         alt='hero of the page'
         fill
         className='object-cover -z-20'
+        priority
       />
 
       <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-20 lg:px-12">
