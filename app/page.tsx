@@ -1,4 +1,3 @@
-'use client'
 import { Hero, GuitarsSection, CourseSection, BlogSection, NewsletterSection, Footer } from '@/components'
 
 export default function Home() {

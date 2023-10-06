@@ -17,9 +17,14 @@ const getGuitars = async (limit?: number) => {
 }
 
 const getGuitar = async (name: string): Promise<GuitarType | null> => {
-  const { data } = await supabase.from('guitarras').select('*').eq('nombre', `${name}`)
-  const guitarData = data?.[0]
-  return guitarData as GuitarType
+  try {
+    const { data } = await supabase.from('guitarras').select('*').eq('nombre', `${name}`)
+    const guitarData = data?.[0]
+    return guitarData as GuitarType
+  } catch (error) {
+    console.log(error)
+    return null
+  }
 }
 
 export {
