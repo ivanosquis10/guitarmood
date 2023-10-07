@@ -1,14 +1,10 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { getGuitar } from '@/services'
 import { GuitarShop } from '@/components'
 
 export default async function Page({ params }: { params: { name: string } }) {
-  const guitarFetch = getGuitar(params.name)
-  const guitar = await guitarFetch
+  const guitar = await getGuitar(params.name)
   return (
-    <>
-      {
-        guitar != null && <GuitarShop guitar={guitar} />
-      }
-    </>
+    <GuitarShop guitar={guitar!} />
   )
 }
