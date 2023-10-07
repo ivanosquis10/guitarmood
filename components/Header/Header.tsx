@@ -8,7 +8,7 @@ const Header = () => {
   const { cart } = useCartStore()
   return (
     <header className='border-b border-zinc-700'>
-      <nav className="relative flex items-center justify-between p-4 lg:px-6 h-14">
+      <nav className="container relative flex items-center justify-between p-4 mx-auto md:p-2 h-14">
         <div className="flex justify-between w-full">
           <div className="flex items-center">
             <Link
